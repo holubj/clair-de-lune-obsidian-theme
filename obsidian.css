@@ -6,7 +6,7 @@
   --font-editor-linenumbers-size: medium;
   --font-h1-preview-size: 2em;
   --font-h2-preview-size: 1.5em;
-  --font-h3-preview-size: 1.25;
+  --font-h3-preview-size: 1.25em;
   --font-h4-preview-size: 1em;
   --font-h5-preview-size: 0.875em;
   --font-h6-preview-size: 0.85em;
@@ -249,7 +249,6 @@
 .markdown-preview-view :not(pre) > code {
   color: #c8d3f5;
   background-color: #191a2a;
-  border: 1px solid #131421;
   font-family: var(--font-monospace);
   padding: 0.2em 0.4em;
   border-radius: 6px;
@@ -257,7 +256,6 @@
 .markdown-preview-view pre {
   padding: 16px !important;
   line-height: 1.45 !important;
-  border: 1px solid #131421 !important;
   border-radius: 6px !important;
   background-color: #191a2a !important;
   font-family: var(--font-monospace) !important;
@@ -605,21 +603,44 @@ path.relation {
 }
 
 .markdown-preview-view table {
-  border: 3px solid #444a73;
+  width: 100%;
+  border: none;
+  border-collapse: separate;
+  border-spacing: 0px;
 }
 .markdown-preview-view thead {
   border-bottom: 3px solid #444a73;
-  color: #7a88cf;
 }
 .markdown-preview-view tbody {
   color: #c0cdf3;
 }
 .markdown-preview-view th {
+  background-color: #191a2a;
+}
+.markdown-preview-view td {
   background-color: #1e2030;
+}
+.markdown-preview-view th:first-child {
+  border-top-left-radius: 6px;
+}
+.markdown-preview-view th:last-child {
+  border-top-right-radius: 6px;
+}
+.markdown-preview-view tr:last-child > td:first-child {
+  border-bottom-left-radius: 6px;
+}
+.markdown-preview-view tr:last-child > td:last-child {
+  border-bottom-right-radius: 6px;
 }
 .markdown-preview-view tr td:not(:last-child),
 .markdown-preview-view tr th:not(:last-child) {
   border-right: 1px solid #2f334d;
+}
+.markdown-preview-view th {
+  border-bottom: 2px solid #2f334d;
+}
+.markdown-preview-view tr:not(:last-child) td {
+  border-bottom: 1px solid #2f334d;
 }
 
 .tag {
@@ -760,11 +781,24 @@ button.mod-cta:hover {
 }
 
 .view-header {
-  background-color: #1e2030;
-  border-bottom: 1px solid #131421;
+  background-color: #222436 !important;
 }
 .view-header .view-actions {
-  background-color: #1e2030;
+  background-color: #222436;
+}
+.view-header .view-header-title-container {
+  padding-left: 0px;
+}
+.view-header .view-header-title-container::after {
+  background: none !important;
+}
+.view-header .view-header-title {
+  font-size: 14px;
+  font-weight: normal;
+  padding-top: 2px;
+}
+.view-header .view-header-icon {
+  padding-top: 7px;
 }
 .view-header .view-header-title,
 .view-header .view-action {
@@ -772,9 +806,8 @@ button.mod-cta:hover {
 }
 
 .workspace-leaf.mod-active .view-header {
-  background-color: #222436;
   color: #e2e8fa;
-  border-bottom: 1px solid #c3e88d;
+  border-bottom: 1px solid #828bb8;
 }
 .workspace-leaf.mod-active .view-header .view-action {
   color: #e2e8fa;
@@ -1015,7 +1048,22 @@ textarea:hover {
 }
 
 .status-bar {
-  border-top: 1px solid #191a2a;
+  z-index: 30;
+  border-top-left-radius: 5px;
+  width: auto;
+  position: absolute;
+  left: auto;
+  border: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 26px;
+  padding: 2px 8px 6px 3px;
+}
+
+.status-bar-item {
+  padding: 0 10px;
+  font-size: 10px;
+  line-height: 10px;
 }
 
 .status-bar,
@@ -1038,16 +1086,16 @@ textarea:hover {
 }
 
 .workspace-tab-header-container {
-  height: 40px;
+  height: 25px;
   padding: 0;
-  margin-top: 4px;
+  margin-top: 10px;
   margin-left: 4px;
 }
 
 .workspace-tab-container-inner {
-  border-radius: 10px;
-  background-color: #131421 !important;
-  border: 2px solid #131421;
+  background-color: transparent !important;
+  border-radius: 0px;
+  border: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1061,6 +1109,11 @@ textarea:hover {
 
 .workspace-tab-header-inner {
   padding: 10px;
+  color: #c8d3f5;
+}
+
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+  color: #444a73;
 }
 
 .workspace-tab-header-inner-icon {
@@ -1076,6 +1129,31 @@ textarea:hover {
 .workspace-tab-header.is-before-active .workspace-tab-header-inner,
 .workspace-tab-header.is-after-active .workspace-tab-header-inner {
   background-color: transparent;
+}
+
+.workspace .nav-header {
+  padding: 0px;
+}
+.workspace .nav-buttons-container {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.workspace .nav-buttons-container .nav-action-button {
+  padding: 2px 5px 0px 5px;
+  margin-bottom: 0px;
+}
+.workspace .nav-buttons-container .nav-action-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.workspace .outgoing-link-pane > .tree-item-self > .tree-item-inner,
+.workspace .backlink-pane > .tree-item-self > .tree-item-inner {
+  font-size: 14px;
+}
+.workspace .outgoing-link-pane .search-result-container .tree-item-inner,
+.workspace .backlink-pane .search-result-container .tree-item-inner {
+  font-size: 12px;
 }
 
 /* Support for https://github.com/liamcain/obsidian-calendar-plugin */
@@ -1222,6 +1300,96 @@ textarea:hover {
 }
 .priority-container .priority-4 {
   color: #b4c2f0;
+}
+
+.hider-ribbon:not(.is-mobile) .workspace-ribbon-collapse-btn {
+  display: none;
+}
+
+.hider-ribbon:not(.is-mobile) .workspace-ribbon.mod-right {
+  pointer-events: none;
+}
+
+.hider-ribbon:not(.is-mobile) .workspace-ribbon.mod-left {
+  position: absolute;
+  border-right: 0px;
+  margin: 0;
+  height: var(--header-height);
+  overflow: visible;
+  flex-basis: 0;
+  bottom: 0;
+  top: auto;
+  display: flex !important;
+  flex-direction: row;
+  z-index: 17;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  filter: drop-shadow(2px 10px 30px rgba(0, 0, 0, 0.2));
+}
+
+.hider-ribbon:not(.is-mobile) .side-dock-actions,
+.hider-ribbon:not(.is-mobile) .side-dock-settings {
+  display: flex;
+  border-top: var(--border-width) solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  margin: 0;
+  position: relative;
+}
+
+.hider-ribbon:not(.is-mobile) .side-dock-actions {
+  padding-left: 5px;
+}
+
+.hider-ribbon:not(.is-mobile) .side-dock-settings {
+  border-right: var(--border-width) solid var(--background-modifier-border);
+  border-top-right-radius: 5px;
+  padding-right: 10px;
+}
+
+.hider-ribbon:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-ribbon-action {
+  display: flex;
+  padding: 4px;
+  margin: 6px 0px 5px 10px;
+}
+
+.hider-ribbon:not(.is-mobile) .workspace-ribbon.mod-left:hover {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.hider-ribbon:not(.is-mobile) .workspace-ribbon.mod-left .workspace-ribbon-collapse-btn {
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.hider-ribbon:not(.is-mobile) .workspace-split.mod-left-split {
+  margin: 0;
+}
+
+.hider-ribbon:not(.is-mobile) .workspace-leaf-content .item-list {
+  padding-bottom: 40px;
+}
+
+.hider-ribbon .workspace-ribbon {
+  padding: 0;
+}
+
+body.hider-ribbon .workspace .nav-files-container {
+  padding-bottom: 50px;
+}
+
+.admonition-parent > .admonition {
+  box-shadow: none;
+  border-radius: 6px;
+}
+.admonition-parent > .admonition .admonition-title {
+  padding: 5px 10px;
+}
+.admonition-parent > .admonition .admonition-title .admonition-title-icon {
+  display: none;
+}
+.admonition-parent > .admonition .admonition-content {
+  margin: 0;
+  padding: 0 10px;
 }
 
 /*# sourceMappingURL=obsidian.css.map */

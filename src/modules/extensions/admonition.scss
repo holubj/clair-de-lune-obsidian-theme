@@ -1,0 +1,17 @@
+.admonition-parent > .admonition {
+  box-shadow: none;
+  border-radius: 6px;
+
+  .admonition-title {
+    padding: 5px 10px;
+
+    .admonition-title-icon {
+      display: none;
+    }
+  }
+
+  .admonition-content {
+    margin: 0;
+    padding: 0 10px;
+  }
+}

@@ -4,7 +4,6 @@
   :not(pre) > code {
     color: $text-primary;
     background-color: $gray-2;
-    border: 1px solid $gray-1;
     font-family: var(--font-monospace);
     padding: 0.2em 0.4em;
     border-radius: 6px;
@@ -14,7 +13,6 @@
     padding: 16px !important;
     line-height: 1.45 !important;
 
-    border: 1px solid $gray-1 !important;
     border-radius: 6px !important;
     background-color: $gray-2 !important;
     font-family: var(--font-monospace) !important;

@@ -1,11 +1,28 @@
 @import "../../colors.scss";
 
 .view-header {
-  background-color: $gray-3;
-  border-bottom: 1px solid $gray-1;
+  background-color: $gray-4 !important;
 
   .view-actions {
-    background-color: $gray-3;
+    background-color: $gray-4;
+  }
+
+  .view-header-title-container {
+    padding-left: 0px;
+  }
+
+  .view-header-title-container::after {
+    background: none !important;
+  }
+
+  .view-header-title {
+    font-size: 14px;
+    font-weight: normal;
+    padding-top: 2px;
+  }
+
+  .view-header-icon {
+    padding-top: 7px;
   }
 
   .view-header-title,
@@ -15,9 +32,8 @@
 }
 
 .workspace-leaf.mod-active .view-header {
-  background-color: $gray-4;
   color: $text-light;
-  border-bottom: 1px solid $green;
+  border-bottom: 1px solid $gray-7;
 
   .view-action {
     color: $text-light;

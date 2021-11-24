@@ -2,12 +2,14 @@
 
 .markdown-preview-view {
   table {
-    border: 3px solid $gray-6;
+    width: 100%;
+    border: none;
+    border-collapse: separate;
+    border-spacing: 0px;
   }
 
   thead {
     border-bottom: 3px solid $gray-6;
-    color: $indigo;
   }
 
   tbody {
@@ -15,11 +17,39 @@
   }
 
   th {
+    background-color: $gray-2;
+  }
+
+  td {
     background-color: $gray-3;
+  }
+
+  th:first-child {
+    border-top-left-radius: 6px;
+  }
+
+  th:last-child {
+    border-top-right-radius: 6px;
+  }
+
+  tr:last-child > td:first-child {
+    border-bottom-left-radius: 6px;
+  }
+
+  tr:last-child > td:last-child {
+    border-bottom-right-radius: 6px;
   }
 
   tr td:not(:last-child),
   tr th:not(:last-child) {
     border-right: 1px solid $gray-5;
+  }
+
+  th {
+    border-bottom: 2px solid $gray-5;
+  }
+
+  tr:not(:last-child) td {
+    border-bottom: 1px solid $gray-5;
   }
 }
