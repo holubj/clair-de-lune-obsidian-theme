@@ -10,6 +10,7 @@ textarea {
   border: 1px solid transparent;
   color: $text-primary;
   font-family: var(--font-monospace);
+  font-size: 12px;
 
   &:hover {
     background: var(--background-modifier-form-field);

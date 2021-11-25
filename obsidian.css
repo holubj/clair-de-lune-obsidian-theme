@@ -896,6 +896,7 @@ textarea {
   border: 1px solid transparent;
   color: #c8d3f5;
   font-family: var(--font-monospace);
+  font-size: 12px;
 }
 input:hover,
 input[type=text]:hover,
@@ -979,9 +980,9 @@ textarea:hover {
   max-height: 450px;
 }
 .suggestion-container .suggestion .suggestion-item {
-  padding: 8px 10px;
-  font-size: var(--font-preview-size);
-  margin-right: 2px;
+  padding: 6px 10px;
+  font-size: 12px;
+  line-height: 16px;
 }
 .suggestion-container .suggestion .suggestion-item .suggestion-content .suggestion-heading-level {
   background-color: #131421;
