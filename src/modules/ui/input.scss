@@ -7,7 +7,7 @@ input[type="email"],
 input[type="password"],
 input[type="number"],
 textarea {
-  border: 1px $gray-1;
+  border: 1px solid transparent;
   color: $text-primary;
   font-family: var(--font-monospace);
 
