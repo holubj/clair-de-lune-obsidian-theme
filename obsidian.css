@@ -614,6 +614,10 @@ path.relation {
 .markdown-preview-view tbody {
   color: #c0cdf3;
 }
+.markdown-preview-view th,
+.markdown-preview-view td {
+  border: none;
+}
 .markdown-preview-view th {
   background-color: #191a2a;
 }

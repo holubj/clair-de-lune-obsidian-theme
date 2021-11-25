@@ -16,6 +16,11 @@
     color: $text-paragraph;
   }
 
+  th,
+  td {
+    border: none;
+  }
+
   th {
     background-color: $gray-2;
   }
