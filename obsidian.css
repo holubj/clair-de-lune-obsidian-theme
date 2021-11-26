@@ -1406,4 +1406,14 @@ body.hider-ribbon .workspace .nav-files-container {
   padding: 0 10px;
 }
 
+.workspace-leaf-content[data-type=excalidraw] .view-content {
+  padding: 0;
+}
+.workspace-leaf-content[data-type=excalidraw] .layer-ui__wrapper {
+  display: none;
+}
+.workspace-leaf-content[data-type=excalidraw] .excalidraw-contextMenuContainer {
+  display: none;
+}
+
 /*# sourceMappingURL=obsidian.css.map */
