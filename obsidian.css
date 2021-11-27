@@ -1416,4 +1416,13 @@ body.hider-ribbon .workspace .nav-files-container {
   display: none;
 }
 
+.dialogue-plugin-message {
+  border-radius: 6px;
+  background-color: #2f334d !important;
+}
+
+.dialogue-plugin-message-title {
+  background-color: #191a2a !important;
+}
+
 /*# sourceMappingURL=obsidian.css.map */
